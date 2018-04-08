@@ -7,24 +7,24 @@ const fs = require('fs');
  */
 const read = (fileName) => {
 
-    return new Promise((done, fail) => {
+  return new Promise((done, fail) => {
 
-        const config = {encoding: 'utf8'};
-        fs.readFile(fileName, config, (error, content) => {
+    const config = {encoding: 'utf8'};
+    fs.readFile(fileName, config, (error, content) => {
 
-            if (error) {
+      if (error) {
 
-                fail(error);
+        fail(error);
 
-            } else {
+      } else {
 
-                done(content);
+        done(content);
 
-            }
-
-        });
+      }
 
     });
+
+  });
 
 };
 
@@ -36,23 +36,23 @@ const read = (fileName) => {
  */
 const write = (fileName, content) => {
 
-    return new Promise((done, fail) => {
+  return new Promise((done, fail) => {
 
-        fs.writeFile(fileName, content, (error) => {
+    fs.writeFile(fileName, content, (error) => {
 
-            if (error) {
+      if (error) {
 
-                fail(error);
+        fail(error);
 
-            } else {
+      } else {
 
-                done(fileName);
+        done(fileName);
 
-            }
-
-        });
+      }
 
     });
+
+  });
 
 };
 
@@ -62,7 +62,7 @@ const write = (fileName, content) => {
  */
 module.exports = {
 
-    read,
-    write
+  read,
+  write
 
 };
